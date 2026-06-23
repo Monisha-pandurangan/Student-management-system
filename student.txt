@@ -1,0 +1,37 @@
+SELECT * FROM students;
+
+SELECT
+AVG(math_score) AS avg_math,
+AVG(science_score) AS avg_science,
+AVG(english_score) AS avg_english
+FROM students;
+
+SELECT
+student_id,
+name,
+(math_score + science_score + english_score) AS total_score
+FROM students
+ORDER BY total_score DESC
+LIMIT 1;
+
+SELECT
+grade,
+COUNT(*) AS total_students
+FROM students
+GROUP BY grade;
+
+SELECT
+gender,
+AVG(math_score) AS avg_math,
+AVG(science_score) AS avg_science,
+AVG(english_score) AS avg_english
+FROM students
+GROUP BY gender;
+
+SELECT *
+FROM students
+WHERE math_score > 80;
+
+SELECT * FROM students
+WHERE name = 'arjun';
+
